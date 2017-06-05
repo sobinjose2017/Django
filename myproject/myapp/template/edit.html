@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>{{title}}</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	
+</head>
+<body>
+	<div class="container">
+		<div class="row">
+			<div class="col-md-12 text-center">
+				<h1>{{heading}}</h1>
+				<p>{{Msg}}</p>
+			</div>
+			<div class="col-md-12">
+				<form action="/myapp/update/" method="post">
+					 {% csrf_token %}
+					<div class="row">
+						<div class="col-md-6 text-right">
+							<label for="">Task Name</label>
+						</div>
+						<div class="col-md-4">
+							<div class="form-group">
+								<input type="text" class="form-control" name="name" value="{{taskname}}">
+							</div>
+						</div>
+					</div>
+						<div class="row">
+						<div class="col-md-6 text-right">
+							<label for="">Description</label>
+						</div>
+						<div class="col-md-4">
+							<div class="form-group">
+							<input type="text" name="taskdes" class="form-control" value="{{descrtioion}}">
+							</div>
+						</div>
+					</div>
+						<div class="row">
+							<div class="col-md-6 text-right">
+								<label for="">Completed</label>
+							</div>
+							<div class="col-md-4">
+								<div class="form-group">
+									<input type="date" class="form-control" name="completed" value="{{completed}}">
+									<input type="hidden" name="id" value="{{id}}">
+								</div>
+							</div>
+					</div>
+					<div class="row ">
+						<div class="col-md-6 text-right">
+							<div class="form-group">
+								<input type="submit" class="btn btn-success" value="Update">
+							</div>
+						</div>
+						<div class="col-md-4">
+								<div class="form-group">
+								<input type="reset" class="btn btn-default" value="Cancel">
+								</div>
+							</div>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
